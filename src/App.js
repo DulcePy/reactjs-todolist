@@ -9,7 +9,8 @@ function App() {
   // This state will be updated when new todos are added
   // The todos are stored as an array of strings
 
-  const [todos, setTodos] = useState(["Go to the supermarket", "Buy milk"]);
+  const [todos, setTodos] = useState([]);
+  const [todoValue, setTodoValue] = useState(""); // State to hold the input value
 
   // Function to handle adding new todos
   function handleAddTodos(newTodo) {
@@ -18,12 +19,23 @@ function App() {
     setTodos(newTodoList);
   }
 
+  function handleDeleteTodo(todoIndex) {
+    // This function will handle deleting a todo item
+    const newTodoList = todos.filter((todo, toDoIndex) => {
+      return toDoIndex !== todoIndex;
+    });
+
+    setTodos(newTodoList);
+  }
+
+  function handleEditTodo(todoIndex) {
+    // This function will handle editing a todo item
+  }
+
   return (
     <main>
-      <TodoInput handleAddTodos={handleAddTodos} />
-      <TodoList todos={todos} />
-      {/* The TodoInput component is responsible for taking user input and adding new todos */}
-      {/* The TodoList component displays the list of todos */}
+      <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodos={handleAddTodos} />
+      <TodoList handleDeleteTodo={handleDeleteTodo} todos={todos} />
     </main>
   );
 }

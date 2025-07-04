@@ -2,8 +2,7 @@ import React, { use } from "react";
 
 export default function TodoInput(props) {
   // This component is responsible for taking user input for new todos
-  const { handleAddTodos } = props; // Destructure the function from props
-  const [todoValue, setTodoValue] = useState(""); // State to hold the input value
+  const { handleAddTodos, todoValue, setTodoValue } = props; // Destructure the props to get the function and state needed
 
   return (
     <header>
