@@ -30,12 +30,23 @@ function App() {
 
   function handleEditTodo(todoIndex) {
     // This function will handle editing a todo item
+    const valueTobeEdited = todos[todoIndex];
+    setTodoValue(valueTobeEdited);
+    handleDeleteTodo(todoIndex);
   }
 
   return (
     <main>
-      <TodoInput todoValue={todoValue} setTodoValue={setTodoValue} handleAddTodos={handleAddTodos} />
-      <TodoList handleDeleteTodo={handleDeleteTodo} todos={todos} />
+      <TodoInput
+        todoValue={todoValue}
+        setTodoValue={setTodoValue}
+        handleAddTodos={handleAddTodos}
+      />
+      <TodoList
+        handleEditTodo={handleEditTodo}
+        handleDeleteTodo={handleDeleteTodo}
+        todos={todos}
+      />
     </main>
   );
 }
