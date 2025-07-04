@@ -1,25 +1,18 @@
 import React from "react";
+import TodoCard from "./TodoCard";
 
-export default function TodoList() {
-  let todos = [
-    "Go to the supermarket",
-    "Buy milk",
-    "Walk the dog",
-    "Finish homework",
-    "Read a book",
-    "Call mom",
-  ];
+export default function TodoList(props) {
+    // This component is responsible for displaying the list of todos
+  const { todos } = props; // Destructure the todos from props
 
   return (
-    <ul className="todoList">
-      {/* This is where the list of todos will be displayed */}
-      {todos.map((todo, todoIndex) => {
-        return (
-          <li className="todoItem" key={todoIndex}>
-            {todo}
-            <i className="fa-solid fa-pen-to-square"></i>
-          </li>
-        );
+    <ul className="mainList">
+      {todos.map((todo, todoIndex) => { 
+        // Map through the todos array and create a TodoCard for each todo
+        // The todoIndex is used as a key for each TodoCard
+        return <TodoCard key={todoIndex}>
+            <p>{todo}</p> 
+        </TodoCard>
       })}
     </ul>
   );
