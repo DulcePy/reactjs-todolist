@@ -1,31 +1,33 @@
-import React from "react";
+import "../index.css";
 
 export default function TodoCard(props) {
   // This component represents a single todo item
   // It receives children as props, which will be the content of the todo
   const { children, handleDeleteTodo, index, handleEditTodo } = props;
   return (
-    <li className="todoItem">
-      {children}
-      <div
-        onClick={() => {
-          handleEditTodo(index); // Call the function to edit the todo
-        }}
-        className="actionsContainer"
-      >
-        <button className="editButton">
-          <i className="fa-solid fa-pen-to-square"></i>
-        </button>
-
-        <button
+    <div className="todo-card">
+      <li className="todoItem">
+        <div className="">{children}</div>
+        <div
           onClick={() => {
-            handleDeleteTodo(index); // Call the function to delete the todo
+            handleEditTodo(index); // Call the function to edit the todo
           }}
-          className="deleteButton"
+          className="actionsContainer"
         >
-          <i className="fa-solid fa-trash"></i>
-        </button>
-      </div>
-    </li>
+          <button className="editButton">
+            <i className="fa-solid fa-pen-to-square"></i>
+          </button>
+
+          <button
+            onClick={() => {
+              handleDeleteTodo(index); // Call the function to delete the todo
+            }}
+            className="deleteButton"
+          >
+            <i className="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </li>
+    </div>
   );
 }

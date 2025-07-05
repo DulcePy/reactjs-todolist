@@ -1,13 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Libertinus Math", system-ui;
+  background-color: rgb(240, 237, 237);
+}
+
+header {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  margin: 60px auto;
+  padding: 20px 0 24px 0;
+  width: 60%;
+  background-color: #ebe8e8;
+  border-radius: 10px;
+}
+
+.add-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.todo-input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Libertinus Math", system-ui;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-input:focus {
+  outline-color: rgb(31, 203, 209);
+  outline-width: 2px;
+  outline-style: solid;
+}
+
+.add-button {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(31, 203, 209);
+  font-size: 14px;
+  font-family: "Libertinus Math", system-ui;
+  color: #fff;
+  margin-left: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-button:hover {
+  transition: all 0.3s ease-in;
+  background-color: rgb(33, 190, 196);
+  cursor: pointer;
+}
+
+/*------------*/
+
+.todo-card {
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ebe8e8;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-card li {
+  list-style: none;
+  font-family: "Libertinus Math", system-ui;
+  display: flex;
+  align-items: center;
+}
+
+.actionsContainer {
+  display: flex;
+  gap: 6px;
+}
+
+.todoItem {
+  display: flex;
+  justify-content: space-between;
 }

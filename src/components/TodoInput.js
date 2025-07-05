@@ -1,11 +1,15 @@
-import React, { use } from "react";
-
+import '../index.css'; 
 export default function TodoInput(props) {
   // This component is responsible for taking user input for new todos
   const { handleAddTodos, todoValue, setTodoValue } = props; // Destructure the props to get the function and state needed
 
   return (
     <header>
+      
+      <div className="">
+        <h1 className="todo-header">ToDo List</h1>
+      </div>
+      <div className="add-form">
       <input
         value={todoValue}
         onChange={(e) => {
@@ -24,6 +28,7 @@ export default function TodoInput(props) {
       >
         Add
       </button>
+      </div>
     </header>
   );
 }

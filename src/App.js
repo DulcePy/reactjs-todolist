@@ -32,6 +32,7 @@ function App() {
     // This function will handle editing a todo item
     const valueTobeEdited = todos[todoIndex];
     setTodoValue(valueTobeEdited);
+
     handleDeleteTodo(todoIndex);
   }
 
