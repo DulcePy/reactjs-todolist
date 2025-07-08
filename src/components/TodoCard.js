@@ -8,13 +8,13 @@ export default function TodoCard(props) {
     <div className="todo-card">
       <li className="todoItem">
         <div className="">{children}</div>
-        <div
-          onClick={() => {
-            handleEditTodo(index); // Call the function to edit the todo
-          }}
-          className="actionsContainer"
-        >
-          <button className="editButton">
+        <div className="actionsContainer">
+          <button
+            onClick={() => {
+              handleEditTodo(index);
+            }}
+            className="editButton"
+          >
             <i className="fa-solid fa-pen-to-square"></i>
           </button>
 
