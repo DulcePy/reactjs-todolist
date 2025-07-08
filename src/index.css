@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: "Libertinus Math", system-ui;
-  background-color: rgb(240, 237, 237);
+  background-color: rgb(224, 217, 217);
 }
 
 header {
@@ -12,9 +12,11 @@ header {
   place-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  margin: 60px auto;
-  padding: 20px 0 24px 0;
-  width: 60%;
+  margin: 60px auto 20px auto;
+  padding: 20px 14px 24px 14px;
+  width: 50%;
+  min-width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #ebe8e8;
   border-radius: 10px;
 }
@@ -23,7 +25,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 80%;
 }
 
 .todo-input {
@@ -37,7 +39,7 @@ header {
 }
 
 .todo-input:focus {
-  outline-color: rgb(31, 203, 209);
+  outline-color: rgb(23, 188, 194);
   outline-width: 2px;
   outline-style: solid;
 }
@@ -46,7 +48,7 @@ header {
   padding: 10px 12px;
   border: none;
   border-radius: 10px;
-  background-color: rgb(31, 203, 209);
+  background-color: rgb(23, 188, 194);
   font-size: 14px;
   font-family: "Libertinus Math", system-ui;
   color: #fff;
@@ -56,7 +58,7 @@ header {
 
 .add-button:hover {
   transition: all 0.3s ease-in;
-  background-color: rgb(33, 190, 196);
+  background-color: rgb(36, 208, 214);
   cursor: pointer;
 }
 
@@ -64,18 +66,17 @@ header {
 
 .todo-card {
   width: 50%;
-  margin: 20px auto;
-  padding: 20px;
+  min-width: 300px;
+  margin: 18px auto;
+  padding: 14px;
   background-color: #ebe8e8;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.todo-card li {
-  list-style: none;
-  font-family: "Libertinus Math", system-ui;
-  display: flex;
-  align-items: center;
+.mainList {
+  padding: 0;
+  margin: 0;
 }
 
 .actionsContainer {
@@ -83,9 +84,29 @@ header {
   gap: 6px;
 }
 
+.actionsContainer button {
+  border: none;
+  background: none;
+}
+
+.actionsContainer i {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.editButton {
+  color: rgb(23, 188, 194);
+}
+
+.deleteButton {
+  color: rgb(240, 108, 108);
+}
+
 .todoItem {
   display: flex;
   justify-content: space-between;
+  font-family: "Libertinus Math", system-ui;
+  align-items: center;
 }
 
 /* modal */
@@ -110,4 +131,15 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   min-width: 250px;
   text-align: center;
+}
+
+.modal button {
+  background-color: rgb(23, 188, 194);
+  color: #fff;
+  border: none;
+  font-size: 12px;
+  font-family: "Libertinus Math", system-ui;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -14,6 +14,7 @@ export default function TodoCard(props) {
               handleEditTodo(index);
             }}
             className="editButton"
+            title="Edit Todo"
           >
             <i className="fa-solid fa-pen-to-square"></i>
           </button>
@@ -23,6 +24,7 @@ export default function TodoCard(props) {
               handleDeleteTodo(index); // Call the function to delete the todo
             }}
             className="deleteButton"
+            title="Delete Todo"
           >
             <i className="fa-solid fa-trash"></i>
           </button>

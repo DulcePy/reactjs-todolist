@@ -25,6 +25,7 @@ export default function TodoInput(props) {
             setTodoValue(""); // Clear input after adding
           }}
           className="add-button"
+          title="Add Todo"
         >
           Add
         </button>
