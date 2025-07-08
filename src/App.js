@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
+import AlertModal from "./components/AlertModal";
 
 function App() {
   // State to hold the list of todos
@@ -9,7 +10,14 @@ function App() {
   // The todos are stored as an array of strings
 
   const [todos, setTodos] = useState([]);
-  const [todoValue, setTodoValue] = useState(''); 
+  const [todoValue, setTodoValue] = useState("");
+  const [alert, setAlert] = useState({ isOpen: false, message: "" });
+
+  // Function to show an alert message
+  function showAlert(msg) {
+    setAlert({ isOpen: true, message: msg });
+    setTimeout(() => setAlert({ isOpen: false, message: "" }), 2000);
+  }
 
   // Function to persist the todo list to localStorage
   function persistData(newList) {
@@ -19,15 +27,14 @@ function App() {
   // Function to handle adding new todos
   function handleAddTodos(newTodo) {
     if (newTodo.trim() === "") {
-      // If the new todo is an empty string, do not add it
-      alert("Please enter a valid todo item.");
+      showAlert("Please enter a valid todo item.");
       return;
     }
     // Create a new array by spreading the existing todos and adding the new todo
     const newTodoList = [...todos, newTodo];
     persistData(newTodoList); // Persist the new todo list to localStorage
     setTodos(newTodoList);
-    alert("Todo added successfully!"); // Optional: Alert the user that the todo was added
+    showAlert("Todo added successfully!"); 
   }
 
   function handleDeleteTodo(index) {
@@ -37,7 +44,7 @@ function App() {
     });
     persistData(newTodoList);
     setTodos(newTodoList);
-    alert("Todo deleted successfully!"); // Optional: Alert the user that the todo was deleted
+    showAlert("Todo deleted successfully!");
   }
 
   function handleEditTodo(index) {
@@ -57,11 +64,9 @@ function App() {
       return;
     }
 
-    localTodos = JSON.parse(localTodos).todos
+    localTodos = JSON.parse(localTodos).todos;
     setTodos(localTodos);
-
-
-  } , []);
+  }, []);
 
   return (
     <main>
@@ -74,6 +79,11 @@ function App() {
         handleEditTodo={handleEditTodo}
         handleDeleteTodo={handleDeleteTodo}
         todos={todos}
+      />
+      <AlertModal
+        isOpen={alert.isOpen}
+        message={alert.message}
+        onClose={() => setAlert({ isOpen: false, message: "" })}
       />
     </main>
   );
