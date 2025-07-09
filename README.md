@@ -9,11 +9,11 @@
 <p />
 
 ### Web ToDo view
-<img src="src/assets/react-todo.png" alt="Web view" width="600" />
+<img src="src/assets/react-todo.png" alt="Web view" width="700" />
 
 
 ### Mobile ToDo responsive view
-<img src="src/assets/react-todo-app.jpg" alt="Mobile view" width="400" />
+<img src="src/assets/react-todo-app.jpg" alt="Mobile view" width="300" />
 
 
 
