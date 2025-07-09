@@ -3,6 +3,7 @@ import "./App.css";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import AlertModal from "./components/AlertModal";
+import Footer from "./components/Footer";
 
 function App() {
   // State to hold the list of todos
@@ -34,7 +35,7 @@ function App() {
     const newTodoList = [...todos, newTodo];
     persistData(newTodoList); // Persist the new todo list to localStorage
     setTodos(newTodoList);
-    showAlert("Todo added successfully!"); 
+    showAlert("Todo added successfully!");
   }
 
   function handleDeleteTodo(index) {
@@ -54,6 +55,7 @@ function App() {
     handleDeleteTodo(index);
   }
 
+  // useEffect to load todos from localStorage when the component mounts
   useEffect(() => {
     if (!localStorage) {
       return;
@@ -85,6 +87,7 @@ function App() {
         message={alert.message}
         onClose={() => setAlert({ isOpen: false, message: "" })}
       />
+      <Footer />
     </main>
   );
 }

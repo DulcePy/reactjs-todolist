@@ -143,3 +143,16 @@ header {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* footer */
+
+.footer-text {
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+}
+
+.footer a {
+  color: rgb(26, 177, 182);
+  text-decoration: none;
+}
