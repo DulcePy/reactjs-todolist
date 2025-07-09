@@ -1,6 +1,9 @@
 ## React ToDo App
 
-![Web principal view](src/assets/react-todo.png)
+### Web view
+![Web view](src/assets/react-todo.png)
+
+### Mobile responsive view
 ![Mobile responsive view](src/assets/react-todo-app.jpg)
 
 
