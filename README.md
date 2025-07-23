@@ -9,11 +9,11 @@
 
 📌 The ToDo app is hosted on <a href="https://react-t0d0.netlify.app/">netlify</a>
 
-### Web ToDo view 💻
+### 💻 Web ToDo view 
 <img src="src/assets/react-todo.png" alt="Web view" width="700" />
 
 
-### Mobile ToDo view 📱
+### 📱 Mobile ToDo view
 <img src="src/assets/react-todo-app.jpg" alt="Mobile view" width="300" />
 
 
